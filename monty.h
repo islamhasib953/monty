@@ -45,5 +45,38 @@ void add(stack_t **head, unsigned int cnt);
 void sub(stack_t **head, unsigned int cnt);
 void mul(stack_t **head, unsigned int counter);
 void pstr(stack_t **head, unsigned int cnt);
+void pint(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif /* MONTY_H */
