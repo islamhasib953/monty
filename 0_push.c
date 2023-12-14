@@ -35,5 +35,5 @@ void re_push(stack_t **head, unsigned int line_number)
 	if (heads.check == 0)
 		add_node(head, n);
 	else
-		addQueue(head, n);
+		add_queue(head, n);
 }

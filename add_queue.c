@@ -13,12 +13,21 @@ void add_queue(stack_t **stack_head, unsigned int line_number)
 }
 
 /**
+<<<<<<< HEAD
  * addQueue - adds a node to the tail of the stack
  * @new_value: new value
+=======
+ * add_queue - adds a node to the tail of the stack
+>>>>>>> b6d0fa68a6307e0dfeb81c73c3ca5a3947eff0f0
  * @stack_head: head of the stack
+ * @new_value: new value
  * Return: no return
  */
+<<<<<<< HEAD
 void addQueue(stack_t **stack_head, unsigned int line_number)
+=======
+void add_queue(stack_t **stack_head, int new_value)
+>>>>>>> b6d0fa68a6307e0dfeb81c73c3ca5a3947eff0f0
 {
     stack_t *new_node, *current_node;
 
