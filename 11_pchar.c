@@ -13,13 +13,13 @@ void re_pchar(stack_t **stack_head, unsigned int line_number)
     if (*stack_head == NULL)
     {
         fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-        custom_free_all(stack_head);
+        free_all(stack_head);
     }
 
     if (top_node->n < 0 || top_node->n > 127)
     {
         fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-        custom_free_all(stack_head);
+        free_all(stack_head);
     }
 
     printf("%c\n", top_node->n);

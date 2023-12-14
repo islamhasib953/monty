@@ -33,7 +33,7 @@ void re_push(stack_t **head, unsigned int line_number)
 	}
 	n = atoi(heads.arg);
 	if (heads.check == 0)
-		addNode(head, n);
+		add_node(head, n);
 	else
 		addQueue(head, n);
 }

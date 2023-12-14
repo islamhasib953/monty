@@ -5,7 +5,7 @@
  * @line_number: line_number
  * Return: no return
  */
-void set_queue_mode(stack_t **stack_head, unsigned int line_number)
+void add_queue(stack_t **stack_head, unsigned int line_number)
 {
     (void)stack_head;
     (void)line_number;
@@ -13,12 +13,12 @@ void set_queue_mode(stack_t **stack_head, unsigned int line_number)
 }
 
 /**
- * custom_add_queue_node - adds a node to the tail of the stack
+ * addQueue - adds a node to the tail of the stack
  * @new_value: new value
  * @stack_head: head of the stack
  * Return: no return
  */
-void custom_add_queue_node(stack_t **stack_head, int new_value)
+void addQueue(stack_t **stack_head, unsigned int line_number)
 {
     stack_t *new_node, *current_node;
 
@@ -31,7 +31,7 @@ void custom_add_queue_node(stack_t **stack_head, int new_value)
         exit(EXIT_FAILURE);
     }
 
-    new_node->n = new_value;
+    new_node->n = line_number;
     new_node->next = NULL;
 
     if (current_node)

@@ -66,7 +66,7 @@ int exe(char *content, stack_t **head, unsigned int counter, FILE *file);
 
 /*Functions*/
 void re_pop(stack_t **stack_head, unsigned int line_number);
-void re_swap(stack_t **stack, unsigned int line_number);
+void re_swap(stack_t **stack_head, unsigned int line_number);
 void re_add(stack_t **stack_head, unsigned int line_number);
 void re_nop(stack_t **stack, unsigned int line_number);
 void re_sub(stack_t **stack_head, unsigned int line_number);
@@ -77,19 +77,17 @@ void re_push(stack_t **head, unsigned int line_number);
 void re_pall(stack_t **stack_head, unsigned int line_number);
 void re_pint(stack_t **stack, unsigned int line_number);
 void re_pchar(stack_t **stack_head, unsigned int line_number);
-
-
-void print_string(stack_t **stack_head, unsigned int line_number);
-
+void re_pstr(stack_t **stack_head, unsigned int line_number);
+void re_rotl(stack_t **stack_head, unsigned int line_number);
 void re_rotr(stack_t **stack_head, unsigned int line_number);
 
-/*Add Func*/
+/*Add Function*/
 void add_node(stack_t **stack_head, int new_value);
-void set_queue_mode(stack_t **stack_head, unsigned int line_number);
+void addQueue(stack_t **stack_head, unsigned int line_number);
 void add_queue(stack_t **head, unsigned int counter);
-void set_stack_mode(stack_t **stack_head, unsigned int line_number);
+void add_stack(stack_t **stack_head, unsigned int line_number);
 
-/*Free Func*/
+/*Free Function*/
 void free_stack(stack_t *head);
 void free_all(stack_t **head);
 
