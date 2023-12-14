@@ -65,23 +65,23 @@ typedef struct instruction_s
 int exe(char *content, stack_t **head, unsigned int counter, FILE *file);
 
 /*Functions*/
-void pop(stack_t **stack_head, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack_head, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack_head, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
-void mul(stack_t **stack_head, unsigned int line_number);
-void mod(stack_t **stack, unsigned int line_number);
-void push(stack_t **head, unsigned int line_number);
-void pall(stack_t **stack_head, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-
+void re_pop(stack_t **stack_head, unsigned int line_number);
+void re_swap(stack_t **stack, unsigned int line_number);
+void re_add(stack_t **stack_head, unsigned int line_number);
+void re_nop(stack_t **stack, unsigned int line_number);
+void re_sub(stack_t **stack_head, unsigned int line_number);
+void re_div(stack_t **stack, unsigned int line_number);
+void re_mul(stack_t **stack_head, unsigned int line_number);
+void re_mod(stack_t **stack, unsigned int line_number);
+void re_push(stack_t **head, unsigned int line_number);
+void re_pall(stack_t **stack_head, unsigned int line_number);
+void re_pint(stack_t **stack, unsigned int line_number);
+void re_pchar(stack_t **stack_head, unsigned int line_number);
 
 
 void print_string(stack_t **stack_head, unsigned int line_number);
 
-void rotr(stack_t **stack_head, unsigned int line_number);
+void re_rotr(stack_t **stack_head, unsigned int line_number);
 
 /*Add Func*/
 void add_node(stack_t **stack_head, int new_value);

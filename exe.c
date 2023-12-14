@@ -11,18 +11,18 @@
 int custom_execute_opcode(char *line_content, stack_t **stack_head, unsigned int line_number, FILE *monty_file)
 {
     instruction_t opcodes[] = {
-        {"push", push}, {"pall", pall},
-        {"pint", pint},
-        {"pop", pop},
-        {"swap", swap},
-        {"add", add},
-        {"nop", nop},
-        {"sub", sub},
-        {"div", div},
-        {"mul", mul},
-        {"mod", mod}, {"rotr", rotr},
-     //   {"queue", add_queue}, {"rotl", rotl},
-     //   {"stack", add_stack}, {"pchar", handle_pchar}, {"pstr", custom_handle_pstr},
+        {"push", re_push}, {"pall", re_pall},
+        {"pint", re_pint},
+        {"pop", re_pop},
+        {"swap", re_swap},
+        {"add", re_add},
+        {"nop", re_nop},
+        {"sub", re_sub},
+        {"div", re_div},
+        {"mul", re_mul},
+        {"mod", re_mod}, {"rotr", re_rotr},
+     /*   {"queue", add_queue}, {"rotl", rotl},
+        {"stack", add_stack}, {"pchar", handle_pchar}, {"pstr", custom_handle_pstr},*/
         {NULL, NULL}
     };
     unsigned int i = 0;

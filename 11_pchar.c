@@ -1,21 +1,26 @@
 #include "monty.h"
 
-
-void pchar()
+/**
+ * re_pchar - prints the character at the top of the stack
+ * @stack_head: stack head
+ * @line_number: line_number
+ * Return: no return
+ */
+void re_pchar(stack_t **stack_head, unsigned int line_number)
 {
-	int ascii_value = stack[top];
-       	if (top == -1)
-	{
-		fprintf(stderr, "Error: can't pchar, stack empty\n");
-		exit(EXIT_FAILURE);
-	}
+    stack_t *top_node = *stack_head;
 
-	if (ascii_value < 0 || ascii_value > 127)
-	{
-		fprintf(stderr, "Error: can't pchar, value out of range\n");
-		exit(EXIT_FAILURE);
-	}
+    if (*stack_head == NULL)
+    {
+        fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+        custom_free_all(stack_head);
+    }
 
-	putchar((char)ascii_value);
-	putchar('\n');
+    if (top_node->n < 0 || top_node->n > 127)
+    {
+        fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+        custom_free_all(stack_head);
+    }
+
+    printf("%c\n", top_node->n);
 }

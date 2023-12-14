@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void _div(stack_t **stack, unsigned int line_number)
+void re_div(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -15,5 +15,5 @@ void _div(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->n /= (*stack)->n;
-	pop(stack, line_number);
+	re_pop(stack, line_number);
 }

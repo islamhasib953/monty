@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * add - adds the top two elements of the stack.
+ * re_add - adds the top two elements of the stack.
  * @stack_head: stack head
  * @line_number: number of line
  * Return: no return
 */
-void add(stack_t **stack_head, unsigned int line_number)
+void re_add(stack_t **stack_head, unsigned int line_number)
 {
 	stack_t *current_node;
 	int addition, count = 0;

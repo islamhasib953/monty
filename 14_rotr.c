@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * rotr - rotates the stack to the bottom
+ * re_rotr - rotates the stack to the bottom
  * @stack_head: stack head
  * @line_number: line_number
  * Return: no return
  */
-void rotr(stack_t **stack_head, unsigned int line_number)
+void re_rotr(stack_t **stack_head, unsigned int line_number)
 {
     stack_t *current_node = *stack_head;
 
