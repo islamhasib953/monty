@@ -13,12 +13,12 @@ void set_queue_mode(stack_t **stack_head, unsigned int line_number)
 }
 
 /**
- * custom_add_queue_node - adds a node to the tail of the stack
- * @new_value: new value
+ * add_queue - adds a node to the tail of the stack
  * @stack_head: head of the stack
+ * @new_value: new value
  * Return: no return
  */
-void custom_add_queue_node(stack_t **stack_head, int new_value)
+void add_queue(stack_t **stack_head, int new_value)
 {
     stack_t *new_node, *current_node;
 

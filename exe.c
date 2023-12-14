@@ -1,16 +1,15 @@
 #include "monty.h"
 
 /**
- * custom_execute_opcode - executes the opcode
- * @line_content: content of the current line
- * @stack_head: head of the linked list - stack
- * @line_number: line number in the Monty file
- * @monty_file: pointer to the Monty file
- * Return: no return
+ * excute_command - excute the command
+ * @line_number: line number
+ * @stack: stack
+ * Return: NONE
  */
-int custom_execute_opcode(char *line_content, stack_t **stack_head, unsigned int line_number, FILE *monty_file)
+void excute_opcode(int line_number, stack_t **stack)
 {
-    instruction_t opcodes[] = {
+	int i, ln;
+	instruction_t opcodes[] = {
         {"push", re_push}, {"pall", re_pall},
         {"pint", re_pint},
         {"pop", re_pop},
@@ -21,37 +20,24 @@ int custom_execute_opcode(char *line_content, stack_t **stack_head, unsigned int
         {"div", re_div},
         {"mul", re_mul},
         {"mod", re_mod}, {"rotr", re_rotr},
-     /*   {"queue", add_queue}, {"rotl", rotl},
-        {"stack", add_stack}, {"pchar", handle_pchar}, {"pstr", custom_handle_pstr},*/
+	{"queue", add_queue}, {"rotl", rotl},
+        {"stack", add_stack}, {"pchar", re_pchar}, {"pstr", print_string},
         {NULL, NULL}
     };
-    unsigned int i = 0;
-    char *opcode;
 
-    opcode = strtok(line_content, " \n\t");
-    if (opcode && opcode[0] == '#')
-        return (0);
-    
-    heads.arg = strtok(NULL, " \n\t");
+	if (common.tokens_len == 0)
+		return;
 
-    while (opcodes[i].opcode && opcode)
-    {
-        if (strcmp(opcode, opcodes[i].opcode) == 0)
-        {
-            opcodes[i].f(stack_head, line_number);
-            return (0);
-        }
-        i++;
-    }
+	for (i = 0; opcodes[i].opcode; i++)
+	{
+		if (strcmp(common.tokens[0], opcodes[i].opcode) == 0)
+		{
+			opcodes[i].f(stack, line_number);
+			return;
+		}
+	}
 
-    if (opcode && opcodes[i].opcode == NULL)
-    {
-        fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-        fclose(monty_file);
-        free(line_content);
-        free_stack(*stack_head);
-        exit(EXIT_FAILURE);
-    }
-
-    return (1);
+	ln = line_number;
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, common.tokens[0]);
+	free_all(stack, EXIT_FAILURE);
 }

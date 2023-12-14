@@ -10,6 +10,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -62,7 +63,25 @@ typedef struct instruction_s
 } instruction_t;
 
 
-int exe(char *content, stack_t **head, unsigned int counter, FILE *file);
+/**
+ * struct shared_s - shared data acroos all files
+ * @type: type of data structure 0: stack, 1: queue
+ * @tokens: tokens
+ * @tokens_len: length of tokens
+ * @file: file
+ * Description: shared data acroos all files
+ */
+typedef struct shared_s
+{
+	int type;
+	char *tokens[BUFSIZ];
+	unsigned int tokens_len;
+	FILE *file;
+	char *line;
+} shared;
+
+shared common;
+
 
 /*Functions*/
 void re_pop(stack_t **stack_head, unsigned int line_number);
@@ -77,8 +96,8 @@ void re_push(stack_t **head, unsigned int line_number);
 void re_pall(stack_t **stack_head, unsigned int line_number);
 void re_pint(stack_t **stack, unsigned int line_number);
 void re_pchar(stack_t **stack_head, unsigned int line_number);
-
-
+void execute_opcode(int line_number, stack_t **stack);
+void rotl(stack_t **stack, unsigned int top);
 void print_string(stack_t **stack_head, unsigned int line_number);
 
 void re_rotr(stack_t **stack_head, unsigned int line_number);
@@ -86,11 +105,10 @@ void re_rotr(stack_t **stack_head, unsigned int line_number);
 /*Add Func*/
 void add_node(stack_t **stack_head, int new_value);
 void set_queue_mode(stack_t **stack_head, unsigned int line_number);
-void add_queue(stack_t **head, unsigned int counter);
+void add_queue(stack_t **stack_head, int new_value);
 void set_stack_mode(stack_t **stack_head, unsigned int line_number);
 
 /*Free Func*/
 void free_stack(stack_t *head);
-void free_all(stack_t **head);
-
+void free_all(stack_t **head, int exit_code);
 #endif
